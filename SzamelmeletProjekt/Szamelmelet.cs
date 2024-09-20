@@ -119,6 +119,6 @@ public static class Szamelmelet
 
     public static List<int> GetParossavalSepecialisSzamok(int kezdet, int veg)
     {
-        return new List<int>();
+        return new List<int>(); 
     }
 }
