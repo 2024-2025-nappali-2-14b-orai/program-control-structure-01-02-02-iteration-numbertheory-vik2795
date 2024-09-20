@@ -21,7 +21,7 @@ public static class Szamelmelet
     {
         // 6 osztói:  (1), 2, 3, (6)
         // 10 osztói: (1),2,5, (10)
-        
+
         List<int> osztok = new List<int>();
         if (szam == 0)
             return osztok;
@@ -29,9 +29,9 @@ public static class Szamelmelet
             szam = -szam;
 
         osztok.Add(1);
-        for (int i = 2; i <= szam/2; i++)
+        for (int i = 2; i <= szam / 2; i++)
         {
-            if (OsztoE(i,szam))
+            if (OsztoE(i, szam))
                 osztok.Add(i);
         }
         osztok.Add(szam);
@@ -45,14 +45,29 @@ public static class Szamelmelet
 
     public static bool PrimszamE(int szam)
     {
-        // Primszám-e a szám
-        return false;
+
+        // Primszám-e
+
+        return GetOsztok(szam).Count == 2;
+
     }
 
     public static List<int> GetPrimszamok(int kezdet, int veg)
     {
         // Prímszámok adott intervallumban
-        return new List<int>();
+        List<int> primek = new List<int>();
+
+        for (int i = kezdet; i <= veg; i++)
+        {
+            if (PrimszamE(i))
+            {
+                primek.Add(i);
+
+            }
+
+        }
+
+        return primek;
     }
 
     public static List<int> GetPrimszamokHatarig(int veg)
@@ -89,7 +104,7 @@ public static class Szamelmelet
     }
 
     public static List<int> GetParossavalSepecialisSzamok(int kezdet, int veg)
-    { 
+    {
         return new List<int>();
     }
 }
